@@ -1,13 +1,14 @@
 <!-- Clear the content of this file and replace it with the description of your project. -->
 <!-- Learn more: https://www.makeareadme.com -->
 
-# Project Starter
+# CMake Starter
 
-[![version](https://img.shields.io/github/v/release/threeal/project-starter?style=flat-square)](https://github.com/threeal/project-starter/releases)
-[![license](https://img.shields.io/github/license/threeal/project-starter?style=flat-square)](./LICENSE)
-[![build status](https://img.shields.io/github/actions/workflow/status/threeal/project-starter/ci.yaml?branch=main&style=flat-square)](https://github.com/threeal/project-starter/actions/workflows/ci.yaml)
+[![version](https://img.shields.io/github/v/release/threeal/cmake-starter?style=flat-square)](https://github.com/threeal/cmake-starter/releases)
+[![license](https://img.shields.io/github/license/threeal/cmake-starter?style=flat-square)](./LICENSE)
+[![build status](https://img.shields.io/github/actions/workflow/status/threeal/cmake-starter/ci.yaml?branch=main&style=flat-square)](https://github.com/threeal/cmake-starter/actions/workflows/ci.yaml)
 
-The Project Starter is a [GitHub repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) that provides a minimalistic boilerplate to kickstart any type of project on [GitHub](https://github.com/). Use this template to initialize your project with preconfigured settings recommended for various GitHub projects.
+The CMake Starter is a [GitHub repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) that provides a minimalistic boilerplate to kickstart your [CMake](https://cmake.org/) project.
+This template offers a streamlined foundation, complete with predefined file structures, essential tools, and recommended settings, ensuring a swift and efficient start to your CMake development journey.
 
 ## Features
 
@@ -16,4 +17,4 @@ The Project Starter is a [GitHub repository template](https://docs.github.com/en
 
 ## Usage
 
-Refer to [this wiki](https://github.com/threeal/project-starter/wiki) for information on how to use this template.
+Refer to [this wiki](https://github.com/threeal/cmake-starter/wiki) for information on how to use this template.
