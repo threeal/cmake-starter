@@ -21,3 +21,22 @@ jobs:
 
       - name: Build Project
         run: cmake --build build
+
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [Windows, Ubuntu, macOS]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Configure Project
+        uses: threeal/cmake-action@v1.3.0
+        with:
+          options: BUILD_TESTING=ON
+
+      - name: Test Project
+        run: ctest -C debug --output-on-failure --test-dir build --no-tests=error
