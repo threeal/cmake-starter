@@ -19,8 +19,13 @@ jobs:
       - name: Configure Project
         uses: threeal/cmake-action@v1.3.0
 
-      - name: Build Project
-        run: cmake --build build
+      - name: Install Project
+        run: cmake --install build --prefix install
+
+      - name: Upload Project as Artifact
+        uses: actions/upload-artifact@v3.1.3
+        with:
+          path: install
 
   test:
     name: Test
