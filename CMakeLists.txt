@@ -21,3 +21,8 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR AND BUILD_TESTING)
     COMMAND cmake ${ARGS} -P ${CMAKE_CURRENT_SOURCE_DIR}/test/MkdirRecursiveTest.cmake
   )
 endif()
+
+install(
+  FILES cmake/MkdirRecursive.cmake
+  DESTINATION lib/cmake
+)
