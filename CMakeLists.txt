@@ -25,5 +25,5 @@ endif()
 
 install(
   FILES cmake/MkdirRecursive.cmake
-  DESTINATION lib/cmake
+  DESTINATION lib/cmake/MyMkdir
 )
