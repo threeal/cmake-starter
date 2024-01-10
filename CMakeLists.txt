@@ -23,7 +23,16 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR AND BUILD_TESTING)
   )
 endif()
 
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+  MyMkdirConfigVersion.cmake
+  COMPATIBILITY SameMajorVersion
+)
+
 install(
-  FILES cmake/MkdirRecursive.cmake
+  FILES
+    cmake/MkdirRecursive.cmake
+    cmake/MyMkdirConfig.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/MyMkdirConfigVersion.cmake
   DESTINATION lib/cmake/MyMkdir
 )
