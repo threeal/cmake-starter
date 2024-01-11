@@ -17,21 +17,23 @@ if(SUBPROJECT)
   set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} PARENT_SCOPE)
 endif()
 
-if(NOT SUBPROJECT AND BUILD_TESTING)
-  enable_testing()
-  add_subdirectory(test)
+if(NOT SUBPROJECT)
+  if(BUILD_TESTING)
+    enable_testing()
+    add_subdirectory(test)
+  endif()
+
+  include(CMakePackageConfigHelpers)
+  write_basic_package_version_file(
+    MyMkdirConfigVersion.cmake
+    COMPATIBILITY SameMajorVersion
+  )
+
+  install(
+    FILES
+      cmake/MkdirRecursive.cmake
+      cmake/MyMkdirConfig.cmake
+      ${CMAKE_CURRENT_BINARY_DIR}/MyMkdirConfigVersion.cmake
+    DESTINATION lib/cmake/MyMkdir
+  )
 endif()
-
-include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-  MyMkdirConfigVersion.cmake
-  COMPATIBILITY SameMajorVersion
-)
-
-install(
-  FILES
-    cmake/MkdirRecursive.cmake
-    cmake/MyMkdirConfig.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/MyMkdirConfigVersion.cmake
-  DESTINATION lib/cmake/MyMkdir
-)
