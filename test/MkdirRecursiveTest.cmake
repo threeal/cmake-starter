@@ -21,3 +21,8 @@ if("Create directory recursively" MATCHES ${TEST_MATCHES})
   message(STATUS "Removing test directory")
   file(REMOVE_RECURSE ${CMAKE_CURRENT_BINARY_DIR}/parent)
 endif()
+
+# Add more test cases here.
+if("Test name" MATCHES ${TEST_MATCHES})
+  # Do something.
+endif()
