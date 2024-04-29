@@ -1,13 +1,4 @@
-# Matches everything if not defined
-if(NOT TEST_MATCHES)
-  set(TEST_MATCHES ".*")
-endif()
-
-set(TEST_COUNT 0)
-
-if("Create directory recursively" MATCHES ${TEST_MATCHES})
-  math(EXPR TEST_COUNT "${TEST_COUNT} + 1")
-
+function(create_directory_recursively)
   if(EXISTS parent)
     message(STATUS "Removing test directory")
     file(REMOVE_RECURSE parent)
@@ -24,15 +15,17 @@ if("Create directory recursively" MATCHES ${TEST_MATCHES})
 
   message(STATUS "Removing test directory")
   file(REMOVE_RECURSE parent)
-endif()
+endfunction()
 
 # Add more test cases here.
-if("Test name" MATCHES ${TEST_MATCHES})
-  math(EXPR TEST_COUNT "${TEST_COUNT} + 1")
-
+function(test_name)
   # Do something.
+endfunction()
+
+if(NOT DEFINED TEST_COMMAND)
+  message(FATAL_ERROR "The 'TEST_COMMAND' variable should be defined")
+elseif(NOT COMMAND ${TEST_COMMAND})
+  message(FATAL_ERROR "Unable to find a command named '${TEST_COMMAND}'")
 endif()
 
-if(TEST_COUNT LESS_EQUAL 0)
-  message(FATAL_ERROR "Nothing to test with: ${TEST_MATCHES}")
-endif()
+cmake_language(CALL ${TEST_COMMAND})
