@@ -1,4 +1,4 @@
-function(create_directory_recursively)
+function(test_create_directory_recursively)
   if(EXISTS parent)
     message(STATUS "Removing test directory")
     file(REMOVE_RECURSE parent)
@@ -18,14 +18,14 @@ function(create_directory_recursively)
 endfunction()
 
 # Add more test cases here.
-function(test_name)
+function(test_something)
   # Do something.
 endfunction()
 
 if(NOT DEFINED TEST_COMMAND)
   message(FATAL_ERROR "The 'TEST_COMMAND' variable should be defined")
-elseif(NOT COMMAND ${TEST_COMMAND})
-  message(FATAL_ERROR "Unable to find a command named '${TEST_COMMAND}'")
+elseif(NOT COMMAND test_${TEST_COMMAND})
+  message(FATAL_ERROR "Unable to find a command named 'test_${TEST_COMMAND}'")
 endif()
 
-cmake_language(CALL ${TEST_COMMAND})
+cmake_language(CALL test_${TEST_COMMAND})
