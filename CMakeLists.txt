@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.21)
 
 project(
   MyMkdir
@@ -8,13 +8,9 @@ project(
   LANGUAGES NONE
 )
 
-if(NOT CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-  set(SUBPROJECT TRUE)
-endif()
-
 include(cmake/MkdirRecursive.cmake)
 
-if(NOT SUBPROJECT)
+if(PROJECT_IS_TOP_LEVEL)
   if(BUILD_TESTING)
     enable_testing()
     add_subdirectory(test)
