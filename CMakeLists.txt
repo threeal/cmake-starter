@@ -8,6 +8,10 @@ project(
   LANGUAGES NONE
 )
 
+option(
+  MY_MKDIR_ENABLE_INSTALL "Enable install targets." ${PROJECT_IS_TOP_LEVEL}
+)
+
 include(cmake/MkdirRecursive.cmake)
 
 if(PROJECT_IS_TOP_LEVEL AND BUILD_TESTING)
@@ -15,16 +19,18 @@ if(PROJECT_IS_TOP_LEVEL AND BUILD_TESTING)
   add_subdirectory(test)
 endif()
 
-include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-  MyMkdirConfigVersion.cmake
-  COMPATIBILITY SameMajorVersion
-)
+if(MY_MKDIR_ENABLE_INSTALL)
+  include(CMakePackageConfigHelpers)
+  write_basic_package_version_file(
+    MyMkdirConfigVersion.cmake
+    COMPATIBILITY SameMajorVersion
+  )
 
-install(
-  FILES
-    cmake/MkdirRecursive.cmake
-    cmake/MyMkdirConfig.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/MyMkdirConfigVersion.cmake
-  DESTINATION lib/cmake/MyMkdir
-)
+  install(
+    FILES
+      cmake/MkdirRecursive.cmake
+      cmake/MyMkdirConfig.cmake
+      ${CMAKE_CURRENT_BINARY_DIR}/MyMkdirConfigVersion.cmake
+    DESTINATION lib/cmake/MyMkdir
+  )
+endif()
