@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-include(MkdirRecursive)
+find_package(MyMkdir REQUIRED PATHS ${CMAKE_CURRENT_LIST_DIR}/../../cmake)
 
 function("Create directory recursively")
   file(REMOVE_RECURSE parent)
