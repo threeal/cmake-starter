@@ -16,7 +16,11 @@ include(cmake/MkdirRecursive.cmake)
 
 if(PROJECT_IS_TOP_LEVEL AND BUILD_TESTING)
   enable_testing()
-  add_subdirectory(test)
+
+  add_test(
+    NAME "recursive directory creation"
+    COMMAND "${CMAKE_COMMAND}"
+      -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/MkdirRecursive.cmake)
 endif()
 
 if(MY_MKDIR_ENABLE_INSTALL)
