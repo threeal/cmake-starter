@@ -19,7 +19,7 @@ if(MY_MKDIR_ENABLE_TESTS)
   add_test(
     NAME "recursive directory creation"
     COMMAND "${CMAKE_COMMAND}"
-      -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/MkdirRecursive.cmake)
+      -P ${CMAKE_CURRENT_SOURCE_DIR}/test/MkdirRecursive.cmake)
 endif()
 
 if(MY_MKDIR_ENABLE_INSTALL)
