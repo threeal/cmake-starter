@@ -16,6 +16,11 @@ include(cmake/MkdirRecursive.cmake)
 if(MY_MKDIR_ENABLE_TESTS)
   enable_testing()
 
+  file(
+    DOWNLOAD https://threeal.github.io/assertion-cmake/v0.3.0
+      ${CMAKE_BINARY_DIR}/Assertion.cmake
+    EXPECTED_MD5 851f49c10934d715df5d0b59c8b8c72a)
+
   add_test(
     NAME "recursive directory creation"
     COMMAND "${CMAKE_COMMAND}"
