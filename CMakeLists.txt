@@ -22,8 +22,7 @@ if(MY_MKDIR_ENABLE_TESTS)
     EXPECTED_MD5 1d8ec589d6cc15772581bf77eb3873ff)
   include(${CMAKE_BINARY_DIR}/Assertion.cmake)
 
-  assertion_add_test(test/mkdir_recursive.cmake
-    NAME "recursive directory creation")
+  assertion_add_test(test/mkdir_recursive.cmake)
 endif()
 
 if(MY_MKDIR_ENABLE_INSTALL)
