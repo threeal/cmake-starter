@@ -8,10 +8,10 @@ project(
   LANGUAGES NONE)
 
 option(MY_MKDIR_ENABLE_TESTS "Enable test targets.")
-option(
-  MY_MKDIR_ENABLE_INSTALL "Enable install targets." ${PROJECT_IS_TOP_LEVEL})
+option(MY_MKDIR_ENABLE_INSTALL "Enable install targets." "${PROJECT_IS_TOP_LEVEL}")
 
-include(cmake/MkdirRecursive.cmake)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+include(MkdirRecursive)
 
 if(MY_MKDIR_ENABLE_TESTS)
   enable_testing()
