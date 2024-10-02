@@ -22,7 +22,7 @@ if(MY_PROJECT_ENABLE_TESTS)
   enable_testing()
 
   find_package(Assertion 1.0.0 REQUIRED)
-  assertion_add_test(test/mkdir_recursive.cmake)
+  assertion_add_test(test/git_clone.cmake)
 endif()
 
 if(MY_PROJECT_ENABLE_INSTALL)
