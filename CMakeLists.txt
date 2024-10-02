@@ -30,11 +30,11 @@ endif()
 if(MY_PROJECT_ENABLE_INSTALL)
   include(CMakePackageConfigHelpers)
   write_basic_package_version_file(
-    MyProjectConfigVersion.cmake COMPATIBILITY SameMajorVersion)
+    cmake/MyProjectConfigVersion.cmake COMPATIBILITY SameMajorVersion)
 
   install(
     FILES cmake/MyProject.cmake
       cmake/MyProjectConfig.cmake
-      ${CMAKE_CURRENT_BINARY_DIR}/MyProjectConfigVersion.cmake
+      ${CMAKE_CURRENT_BINARY_DIR}/cmake/MyProjectConfigVersion.cmake
     DESTINATION lib/cmake/MyProject)
 endif()
