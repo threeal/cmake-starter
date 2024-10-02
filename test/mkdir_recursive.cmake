@@ -1,4 +1,4 @@
-find_package(MyMkdir REQUIRED PATHS ${CMAKE_CURRENT_LIST_DIR}/../cmake)
+find_package(MyProject REQUIRED PATHS ${CMAKE_CURRENT_LIST_DIR}/../cmake)
 
 section("it should create a directory recursively")
   file(REMOVE_RECURSE parent)

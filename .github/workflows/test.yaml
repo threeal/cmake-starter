@@ -15,7 +15,7 @@ jobs:
       - name: Configure Project
         uses: threeal/cmake-action@v2.0.0
         with:
-          options: MY_MKDIR_ENABLE_TESTS=ON
+          options: MY_PROJECT_ENABLE_TESTS=ON
           run-build: false
 
       - name: Test Project
