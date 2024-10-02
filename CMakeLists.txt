@@ -29,8 +29,8 @@ endif()
 
 if(MY_PROJECT_ENABLE_INSTALL)
   include(CMakePackageConfigHelpers)
-  write_basic_package_version_file(
-    cmake/MyProjectConfigVersion.cmake COMPATIBILITY SameMajorVersion)
+  write_basic_package_version_file(cmake/MyProjectConfigVersion.cmake
+    COMPATIBILITY SameMajorVersion ARCH_INDEPENDENT)
 
   install(
     FILES cmake/MyProject.cmake
