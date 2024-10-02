@@ -10,13 +10,15 @@ project(
 option(MY_PROJECT_ENABLE_TESTS "Enable test targets.")
 option(MY_PROJECT_ENABLE_INSTALL "Enable install targets." "${PROJECT_IS_TOP_LEVEL}")
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
 # Prefer system packages over the find modules provided by this project.
 if(NOT DEFINED CMAKE_FIND_PACKAGE_PREFER_CONFIG)
   set(CMAKE_FIND_PACKAGE_PREFER_CONFIG TRUE)
 endif()
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-include(MyProject)
+# Include the main module.
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MyProject.cmake)
 
 if(MY_PROJECT_ENABLE_TESTS)
   enable_testing()
