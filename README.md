@@ -2,14 +2,17 @@
 
 # CMake Starter
 
-The CMake Starter is a [GitHub repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) that provides a minimalistic boilerplate to kickstart your [CMake](https://cmake.org/) project.
-This template offers a streamlined foundation, complete with predefined file structures, essential tools, and recommended settings, ensuring a swift and efficient start to your CMake development journey.
+A minimalistic template to start a new [CMake](https://cmake.org/) project.
+
+This template provides a minimal sample CMake project that supports installation and testing. The project mainly consists of a CMake module that provides functions for use by other CMake projects.
+
+In this template, the sample project is named `MyProject`, which includes a sample `MyProject.cmake` module. The module contains a sample `git_clone` function that can be used to clone a [Git](https://git-scm.com/) repository to a specific directory.
 
 ## Key Features
 
-- Standard template for CMake projects supporting installation and testing of CMake modules.
-- Automated CI with [GitHub Actions](https://github.com/features/actions) workflows for building and testing the CMake project.
-- [Dependabot](https://docs.github.com/en/code-security/dependabot) integration for checking updates on GitHub Actions dependencies.
+- Provides a minimalistic CMake project with installation and testing support.
+- Tests CMake variables and functions using [Assertion.cmake](https://github.com/threeal/assertion-cmake/tree/v1.0.0).
+- Preconfigured [Dependabot](https://docs.github.com/en/code-security/dependabot) and [GitHub Actions](https://github.com/features/actions) workflows.
 
 ## Usage Guide
 

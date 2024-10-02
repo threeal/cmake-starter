@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.21)
 project(
   MyProject
   VERSION 0.0.0
-  DESCRIPTION "A starter CMake package for creating directories recursively"
+  DESCRIPTION "A sample CMake project"
   HOMEPAGE_URL https://github.com/threeal/cmake-starter
   LANGUAGES NONE)
 
