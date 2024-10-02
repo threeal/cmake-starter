@@ -8,20 +8,20 @@ project(
   LANGUAGES NONE)
 
 option(MY_MKDIR_ENABLE_TESTS "Enable test targets.")
-option(
-  MY_MKDIR_ENABLE_INSTALL "Enable install targets." ${PROJECT_IS_TOP_LEVEL})
+option(MY_MKDIR_ENABLE_INSTALL "Enable install targets." "${PROJECT_IS_TOP_LEVEL}")
 
-include(cmake/MkdirRecursive.cmake)
+# Prefer system packages over the find modules provided by this project.
+if(NOT DEFINED CMAKE_FIND_PACKAGE_PREFER_CONFIG)
+  set(CMAKE_FIND_PACKAGE_PREFER_CONFIG TRUE)
+endif()
+
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+include(MkdirRecursive)
 
 if(MY_MKDIR_ENABLE_TESTS)
   enable_testing()
 
-  file(
-    DOWNLOAD https://github.com/threeal/assertion-cmake/releases/download/v1.0.0/Assertion.cmake
-      ${CMAKE_BINARY_DIR}/Assertion.cmake
-    EXPECTED_MD5 1d8ec589d6cc15772581bf77eb3873ff)
-  include(${CMAKE_BINARY_DIR}/Assertion.cmake)
-
+  find_package(Assertion 1.0.0 REQUIRED)
   assertion_add_test(test/mkdir_recursive.cmake)
 endif()
 
