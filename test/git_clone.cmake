@@ -1,4 +1,4 @@
-find_package(MyProject REQUIRED PATHS ${CMAKE_CURRENT_LIST_DIR}/../cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/../cmake/MyProject.cmake)
 
 section("it should clone a Git repository")
   file(REMOVE_RECURSE repo)
