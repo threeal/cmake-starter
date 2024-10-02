@@ -1,3 +1,4 @@
+# TODO: Replace `MyProject.cmake` with the correct main module file.
 include(${CMAKE_CURRENT_LIST_DIR}/../cmake/MyProject.cmake)
 
 section("it should clone a Git repository")

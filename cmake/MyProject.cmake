@@ -1,3 +1,5 @@
+# TODO: Rename this module to match the correct project name.
+
 # Clone a Git repository to a specified directory.
 #
 # git_clone(<url> <dir>)
