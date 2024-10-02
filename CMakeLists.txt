@@ -32,9 +32,10 @@ if(MY_PROJECT_ENABLE_INSTALL)
   write_basic_package_version_file(cmake/MyProjectConfigVersion.cmake
     COMPATIBILITY SameMajorVersion ARCH_INDEPENDENT)
 
+  include(GNUInstallDirs)
   install(
     FILES cmake/MyProject.cmake
       cmake/MyProjectConfig.cmake
       ${CMAKE_CURRENT_BINARY_DIR}/cmake/MyProjectConfigVersion.cmake
-    DESTINATION lib/cmake/MyProject)
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/MyProject)
 endif()
