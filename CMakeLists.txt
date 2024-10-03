@@ -40,10 +40,9 @@ if(MY_PROJECT_ENABLE_INSTALL)
 
   # TODO: Replace the `FILES` arguments with the correct files.
   # TODO: Rename the `DESTINATION` argument to match the correct project name.
-  include(GNUInstallDirs)
   install(
     FILES cmake/MyProject.cmake
       cmake/MyProjectConfig.cmake
       ${CMAKE_CURRENT_BINARY_DIR}/cmake/MyProjectConfigVersion.cmake
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/MyProject)
+    DESTINATION lib/cmake/MyProject)
 endif()
