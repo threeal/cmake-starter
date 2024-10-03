@@ -21,7 +21,7 @@ endif()
 
 # Include the main module.
 # TODO: Replace `MyProject.cmake` with the correct main module file.
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/MyProject.cmake)
+include(cmake/MyProject.cmake)
 
 # TODO: Replace `MY_PROJECT_ENABLE_TESTS` with the correct option.
 if(MY_PROJECT_ENABLE_TESTS)
