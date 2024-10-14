@@ -35,7 +35,7 @@ Alternatively, you can also remove the `LICENSE` file or leave it as is to mark 
 Do the following steps to replace all the sample information from the template with the new project information:
 - Replace the content of this `README.md` file with the description of the new project. Refer to [this documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) for more information about adding READMEs to a project.
 - Rename the main module file ([`cmake/MyProject.cmake`](./cmake/MyProject.cmake)) to match the correct project name.
-- Modify the test files ([`test/git_clone.cmake`](./test/git_clone.cmake)) to include the correct main module file.
+- Modify the test files ([`test/test_git_clone.cmake`](./test/test_git_clone.cmake)) to include the correct main module file.
 - Modify the [`CMakeLists.txt`](./CMakeLists.txt) file as follows:
   - Replace the project name, version, description, and homepage URL.
   - Rename the options to be prefixed with the correct project name.
@@ -63,7 +63,7 @@ cmake -B build
 
 ### Testing Modules
 
-Rename and modify the sample test file ([`test/git_clone.cmake`](./test/git_clone.cmake)) to test the variables and functions provided by the module files. The sample test file uses the [Assertion.cmake](https://github.com/threeal/assertion-cmake/tree/v1.0.0) module for testing CMake projects. Refer to [this documentation](https://github.com/threeal/assertion-cmake/tree/v1.0.0#assertion-example) for more information about testing CMake projects using Assertion.cmake.
+Rename and modify the sample test file ([`test/test_git_clone.cmake`](./test/test_git_clone.cmake)) to test the variables and functions provided by the module files. The sample test file uses the [Assertion.cmake](https://github.com/threeal/assertion-cmake/tree/v1.0.0) module for testing CMake projects. Refer to [this documentation](https://github.com/threeal/assertion-cmake/tree/v1.0.0#assertion-example) for more information about testing CMake projects using Assertion.cmake.
 
 More test files can also be added under the [`test`](./test) directory. Just make sure to add the new test files to the test list in the [`CMakeLists.txt`](./CMakeLists.txt) file.
 

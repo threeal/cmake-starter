@@ -28,7 +28,7 @@ if(MY_PROJECT_ENABLE_TESTS)
   enable_testing()
 
   find_package(Assertion 1.0.0 REQUIRED)
-  assertion_add_test(test/git_clone.cmake)
+  assertion_add_test(test/test_git_clone.cmake)
 endif()
 
 # TODO: Replace `MY_PROJECT_ENABLE_INSTALL` with the correct option.
