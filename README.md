@@ -43,9 +43,10 @@ Do the following steps to replace all the sample information from the template w
   - Rename the package config file to be prefixed with the correct project name and modify it to include the correct main module file.
   - Rename the package config version file to be prefixed with the correct project name.
   - Modify to install the correct files to the correct destination.
+- Modify the [`CMakePresets.json`](./CMakePresets.json) file as follows:
+  - Rename the options to be prefixed with the correct project name.
 - Modify workflow files as follows:
   - Use the correct project name in the [`build.yaml`](./.github/workflows/build.yaml) workflow file.
-  - Use the correct options in the [`test.yaml`](./.github/workflows/test.yaml) workflow file.
 
 > Note: You can also search for the `TODO` comments for a list of information that needs to be replaced.
 
@@ -58,7 +59,7 @@ Additional module files can be added under the [`cmake`](./cmake) directory. Jus
 After writing the module files, you can build the project using the following command:
 
 ```sh
-cmake -B build
+cmake --preset default
 ```
 
 ### Testing Modules
@@ -70,11 +71,9 @@ More test files can also be added under the [`test`](./test) directory. Just mak
 After writing the test files, you can test the project using the following command:
 
 ```sh
-cmake -B build -D MY_PROJECT_ENABLE_TESTS=ON
-ctest --test-dir build --output-on-failure
+cmake --preset development
+ctest --preset development
 ```
-
-> Note: Replace the `MY_PROJECT_ENABLE_TESTS` option with the correct test option.
 
 ### Cut a Release
 
