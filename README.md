@@ -45,8 +45,6 @@ Do the following steps to replace all the sample information from the template w
   - Modify to install the correct files to the correct destination.
 - Modify the [`CMakePresets.json`](./CMakePresets.json) file as follows:
   - Rename the options to be prefixed with the correct project name.
-- Modify workflow files as follows:
-  - Use the correct project name in the [`build.yaml`](./.github/workflows/build.yaml) workflow file.
 
 > Note: You can also search for the `TODO` comments for a list of information that needs to be replaced.
 
@@ -77,10 +75,10 @@ ctest --preset development
 
 ### Cut a Release
 
-When everything is complete, run the following command to install the new project to the `install` directory:
+When everything is complete, run the following command to package the project:
 
 ```sh
-cmake --install build --prefix install
+cpack --preset default
 ```
 
-Files inside the `install` directory can be included in the release files. Before releasing, ensure that this project is at the correct version and pushed to the upstream repository. Refer to [this documentation](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) for more information about releasing a project.
+The project will be packaged into the `build/*.tar.gz` file, which can be included in the release files. Before releasing, ensure that this project is at the correct version and has been pushed to the upstream repository. Refer to [this documentation](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) for more information about releasing a project.
