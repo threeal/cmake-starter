@@ -47,7 +47,6 @@ Do the following steps to replace all the sample information from the template w
   - Rename the options to be prefixed with the correct project name.
 - Modify workflow files as follows:
   - Use the correct project name in the [`build.yaml`](./.github/workflows/build.yaml) workflow file.
-  - Use the correct options in the [`test.yaml`](./.github/workflows/test.yaml) workflow file.
 
 > Note: You can also search for the `TODO` comments for a list of information that needs to be replaced.
 
