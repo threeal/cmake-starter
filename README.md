@@ -45,8 +45,6 @@ Do the following steps to replace all the sample information from the template w
   - Modify to install the correct files to the correct destination.
 - Modify the [`CMakePresets.json`](./CMakePresets.json) file as follows:
   - Rename the options to be prefixed with the correct project name.
-- Modify workflow files as follows:
-  - Use the correct project name in the [`build.yaml`](./.github/workflows/build.yaml) workflow file.
 
 > Note: You can also search for the `TODO` comments for a list of information that needs to be replaced.
 
