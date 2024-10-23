@@ -1,3 +1,7 @@
+cmake_minimum_required(VERSION 3.21)
+
+include(Assertion)
+
 # TODO: Replace `MyProject.cmake` with the correct main module file.
 include(${CMAKE_CURRENT_LIST_DIR}/../cmake/MyProject.cmake)
 
@@ -13,9 +17,8 @@ endsection()
 section("it should fail to clone an invalid Git repository")
   file(REMOVE_RECURSE repo)
 
-  assert_fatal_error(
-    CALL git_clone https://github.com repo
-    MESSAGE "Failed to clone 'https://github.com'")
+  assert_call(git_clone https://github.com repo
+    EXPECT_ERROR "^Failed to clone 'https://github.com'")
 
   assert(NOT EXISTS repo)
 endsection()
