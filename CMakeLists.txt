@@ -12,7 +12,7 @@ project(
 option(MY_PROJECT_ENABLE_TESTS "Enable test targets.")
 option(MY_PROJECT_ENABLE_INSTALL "Enable install targets." "${PROJECT_IS_TOP_LEVEL}")
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+list(PREPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 # Prefer system packages over the find modules provided by this project.
 if(NOT DEFINED CMAKE_FIND_PACKAGE_PREFER_CONFIG)
@@ -20,8 +20,8 @@ if(NOT DEFINED CMAKE_FIND_PACKAGE_PREFER_CONFIG)
 endif()
 
 # Include the main module.
-# TODO: Replace `MyProject.cmake` with the correct main module file.
-include(cmake/MyProject.cmake)
+# TODO: Replace `MyProject` with the correct main module file.
+include(MyProject)
 
 # TODO: Replace `MY_PROJECT_ENABLE_TESTS` with the correct option.
 if(MY_PROJECT_ENABLE_TESTS)
@@ -36,9 +36,10 @@ endif()
 # TODO: Replace `MY_PROJECT_ENABLE_INSTALL` with the correct option.
 if(MY_PROJECT_ENABLE_INSTALL)
   # TODO: Rename the output file to be prefixed with the correct project name.
-  # TODO: Replace `MyProject.cmake` with the correct main module file.
+  # TODO: Replace `MyProject` with the correct main module file.
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/cmake/MyProjectConfig.cmake
-    "include(\${CMAKE_CURRENT_LIST_DIR}/MyProject.cmake)\n")
+    "list(PREPEND CMAKE_MODULE_PATH \${CMAKE_CURRENT_LIST_DIR})\n"
+    "include(MyProject)\n")
 
   # TODO: Rename the output file to be prefixed with the correct project name.
   include(CMakePackageConfigHelpers)
