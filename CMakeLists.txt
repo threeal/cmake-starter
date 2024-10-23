@@ -27,8 +27,10 @@ include(cmake/MyProject.cmake)
 if(MY_PROJECT_ENABLE_TESTS)
   enable_testing()
 
-  find_package(Assertion 1.0.0 REQUIRED)
-  assertion_add_test(test/test_git_clone.cmake)
+  find_package(Assertion 2.0.0 REQUIRED)
+  list(APPEND CMAKE_SCRIPT_TEST_DEFINITIONS CMAKE_MODULE_PATH)
+
+  add_cmake_script_test(test/test_git_clone.cmake)
 endif()
 
 # TODO: Replace `MY_PROJECT_ENABLE_INSTALL` with the correct option.
