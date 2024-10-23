@@ -54,6 +54,6 @@ if(MY_PROJECT_ENABLE_INSTALL)
       ${CMAKE_CURRENT_BINARY_DIR}/cmake/MyProjectConfigVersion.cmake
     DESTINATION lib/cmake/MyProject)
 
-  set(CPACK_SYSTEM_NAME any)
+  set(CPACK_PACKAGE_FILE_NAME "${PROJECT_NAME}")
   include(CPack)
 endif()
