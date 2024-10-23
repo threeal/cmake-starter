@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.21)
 
 include(Assertion)
 
-# TODO: Replace `MyProject.cmake` with the correct main module file.
-include(${CMAKE_CURRENT_LIST_DIR}/../cmake/MyProject.cmake)
+# TODO: Replace `MyProject` with the correct main module file.
+include(MyProject)
 
 section("it should clone a Git repository")
   file(REMOVE_RECURSE repo)
